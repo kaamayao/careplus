@@ -1,0 +1,83 @@
+@import '../layout.scss';
+
+@media (min-width: 1201px){
+  .indexBanner{
+    align-items: center;
+    &__content-wrap{
+      padding-right: 400px;
+    }
+    &__img{
+      position: absolute;
+      height: 50vw;
+      max-height: 540px;
+      bottom:70px;
+      right: 0;
+    }
+  }
+}
+@media (min-width: 870px) and (max-width: 1200px){
+  .indexBanner{
+    align-items: left;
+    &__img{
+      position: absolute;
+      height: 50vw;
+      max-height: 480px;
+      bottom:50px;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 869px){
+  .indexBanner{
+    align-items: center;
+    &__img{
+      display: none; 
+    }
+  }
+}
+.indexBanner{
+  display: flex;
+  position: relative;
+  padding-top: 100px;
+  flex-direction: column;
+  &__banner-img-wrap{
+    height: 260px;
+    width: 100%;
+    background-image: url('../../images/indexbanner/lines.svg');
+    background-size: cover;
+    z-index: 3;
+  }
+  &__content-wrap{
+    width: 80%;
+    max-width: 350px; 
+    padding-left: 20px;
+  }
+  &__learn-more-btn{
+    font-family: "BelongSans";
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:15px;
+    padding-right:15px;
+    color: white;
+    font-size: 13px;
+    border-radius: 40px;
+    background-color: $mainGreen;
+    &:hover{
+      cursor: pointer;
+      background-color: $mainBlue;
+    }
+  }
+  &__title{
+    font-family: "BelongSans";
+    font-size: 20px;
+    color: $mainBlue;
+  }
+  &__content{
+    font-family: "comfortaa";
+    font-size: 16px;
+    color: #5A5A5A;
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+}

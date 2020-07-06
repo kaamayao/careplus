@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react';
 
-const TemplateName = ({ siteTitle }) => {
-  ;<>?</>
-}
+const TemplateName = ({siteTitle}) => {
+  return <>?</>;
+};
 
-export default TemplateName
+export default TemplateName;
