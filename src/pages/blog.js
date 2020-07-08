@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import PostList from '../components/post-list/post-list.js';
+import PostList from '../components/postList/postList.js';
 
 const Blog = () => (
   <Layout>

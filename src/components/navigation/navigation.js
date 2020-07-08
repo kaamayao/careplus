@@ -4,6 +4,7 @@ import Close from '../../images/close.svg';
 import Logo from '../../images/Logo-sm.png';
 import './navigation.scss';
 import {Link} from 'gatsby';
+import SubscribeNews from '../subscribeNews/subscribeNews';
 
 class Navigation extends React.Component {
   state = {
@@ -32,6 +33,7 @@ class Navigation extends React.Component {
   render() {
     return (
       <nav className="navigation">
+        <SubscribeNews></SubscribeNews>
         <div className={this.state.isMenuOpen?'none':'navigation__mobile'}>
           <a className="navigation__button" onClick={()=>this.switchMenu()} >
             <img src={Menu} className="navigation__menu"/>
@@ -57,9 +59,11 @@ class Navigation extends React.Component {
               Sobre Nosotros</Link>
             <Link className="navigation__link" to="/servicios/">Servicios</Link>
             <Link className="navigation__link" to="/blog/">Blog</Link>
-            <Link className="navigation__link" to="/page-2/">Testimonios</Link>
+            <Link className="navigation__link" to="/testimonios/">
+              Testimonios</Link>
             <Link className="navigation__link" to="/page-2/">Cursos</Link>
-            <Link className="navigation__link" to="/page-2/">Contáctanos</Link>
+            <Link className="navigation__link" to="/contactanos/">
+              Contáctanos</Link>
           </div>
         </div>
         <div className="navigation__subscribe">
