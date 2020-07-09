@@ -32,7 +32,7 @@
 
   &__close-wrap{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height:30px;
@@ -48,25 +48,43 @@
     display: flex;
     position: absolute;
     flex-direction: column;
-    max-width:450px;
     background-color:white;
     width:100%;
     margin-right: 22px;
     margin-left: 22px;
+    @media (min-width:800px){
+     max-width:480px;
+    }
+    @media (max-width:799px){
+     max-width:360px;
+    } 
   }
 
   &__title{
-    width:100%;
     text-align: center;
     font-size: 17px;
     font-family: "BelongSans";
     margin:0;
     padding-bottom: 25px;
     color: white;
+    @media (min-width:800px){
+      width: 250px;
+    }
+    @media (max-width:799px){
+      width: 200px;
+    } 
+  }
+
+  &__title-wrap{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:100%;
     background-color: $mainBlue;
   }
 
-  &__form{ display: flex;
+  &__form{
+    display: flex;
     flex-direction: column;
     padding-top:30px;
     padding-bottom:40px;
@@ -79,9 +97,14 @@
 
   &__input-wrap{
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    @media (min-width:800px){
+    }
+    @media (max-width:799px){
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    } 
   }
 
   &__label{
@@ -118,9 +141,9 @@
   }
   
   &__input{
-    flex:1;
     padding:10px;
     border-radius: 5px;
     border: 1px solid $secondaryGray;
+    width: 90%;
   }
 }

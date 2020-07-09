@@ -12,6 +12,13 @@ class Navigation extends React.Component {
     isDesktop: false,
   }
 
+  constructor(props) {
+    super(props);
+    this.switchMenu = this.switchMenu.bind(this);
+    this.switchSubscribeMenu = this.switchSubscribeMenu.bind(this);
+    this.subscribeNews = React.createRef();
+  }
+
   componentDidMount() {
     this.changeMenuType();
     window.addEventListener('resize', this.changeMenuType);
@@ -22,8 +29,12 @@ class Navigation extends React.Component {
     this.setState({isDesktop: isDesktop});
   }
 
-  switchMenu = () => {
+  switchMenu() {
     this.setState({isMenuOpen: !this.state.isMenuOpen});
+  }
+
+  switchSubscribeMenu() {
+    this.subscribeNews.current.switchmenu();
   }
 
   componentWillUnmount() {
@@ -33,9 +44,9 @@ class Navigation extends React.Component {
   render() {
     return (
       <nav className="navigation">
-        <SubscribeNews></SubscribeNews>
+        <SubscribeNews ref={this.subscribeNews}></SubscribeNews>
         <div className={this.state.isMenuOpen?'none':'navigation__mobile'}>
-          <a className="navigation__button" onClick={()=>this.switchMenu()} >
+          <a className="navigation__button" onClick={this.switchMenu} >
             <img src={Menu} className="navigation__menu"/>
           </a>
           <div className="navigation__mobile-logo-wrap">
@@ -54,22 +65,33 @@ class Navigation extends React.Component {
             </div>
           </div>
           <div className="navigation__links">
-            <Link className="navigation__link" to="/">Inicio</Link>
-            <Link className="navigation__link" to="/sobre-nosotros/">
+            <Link className="navigation__link" activeClassName="green"
+              to="/" onlyActiveOnIndex>
+              Inicio</Link>
+            <Link className="navigation__link" to="/sobre-nosotros/"
+              activeClassName="green" onlyActiveOnIndex>
               Sobre Nosotros</Link>
-            <Link className="navigation__link" to="/servicios/">Servicios</Link>
-            <Link className="navigation__link" to="/blog/">Blog</Link>
-            <Link className="navigation__link" to="/testimonios/">
+            <Link className="navigation__link" activeClassName="green"
+              to="/servicios/" onlyActiveOnIndex>
+              Servicios</Link>
+            <Link className="navigation__link" to="/blog/"
+              activeClassName="green" onlyActiveOnIndex>
+              Blog</Link>
+            <Link className="navigation__link" to="/testimonios/"
+              activeClassName="green" onlyActiveOnIndex>
               Testimonios</Link>
-            <Link className="navigation__link" to="/page-2/">Cursos</Link>
-            <Link className="navigation__link" to="/contactanos/">
+            <Link className="navigation__link" to="/page-2/"
+              activeClassName="green" onlyActiveOnIndex>
+              Cursos</Link>
+            <Link className="navigation__link" to="/contactanos/"
+              activeClassName="green" onlyActiveOnIndex>
               Contáctanos</Link>
           </div>
         </div>
-        <div className="navigation__subscribe">
-          <Link className="navigation__link-subscribe" to="/">
-            Subscribéte </Link>
-        </div>
+        <a className="navigation__subscribe"
+          onClick={this.switchSubscribeMenu}>
+            Subscribéte
+        </a>
       </nav>
     );
   }

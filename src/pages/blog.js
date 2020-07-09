@@ -6,7 +6,7 @@ import PostList from '../components/postList/postList.js';
 
 const Blog = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Blog" />
     <PostList></PostList>
   </Layout>
 );

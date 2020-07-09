@@ -53,16 +53,20 @@
       display: flex;
       padding-right: 10px;
       align-items: center;
-      justify-content: end;
+      justify-content: flex-end;
       height: 35px;
       background-color: white;
       -webkit-box-shadow: inset 0px 11px 9px -17px rgba(0,0,0,0.9);
       -moz-box-shadow: inset 0px 11px 9px -17px rgba(0,0,0,0.9);
       box-shadow: inset 0px 11px 9px -17px rgba(0,0,0,0.9);
+      -webkit-user-select: none; /* Safari */        
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
       border-bottom: 1px solid $mainGray;
-    }
-    &__link-subscribe{
-      color:$mainBlue;
+      &:hover {
+        cursor:pointer;
+      }
     }
     &__button{
       &:hover{
@@ -120,11 +124,9 @@
       text-align: left;
       background-color: $mainBlue;
       color: white;
-    }
-    &__link-subscribe{
-      color: white;
-      &:hover{
-        color: $mainBlue;
+      &:hover {
+        cursor:pointer;
+        background-color: $mainGreen;
       }
     }
     &__mobile{
@@ -162,8 +164,5 @@
   &__subscribe{
     font-family: 'Comfortaa';
     font-size: 14px;
-  }
-  &__link-subscribe{
-    text-decoration: none;
   }
 }

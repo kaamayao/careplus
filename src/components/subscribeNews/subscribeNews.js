@@ -12,6 +12,7 @@ export default class SubscribeNews extends React.Component {
   }
 
   switchmenu() {
+    console.log('Hiiii mini');
     this.setState({
       open: !this.state.open,
     });
@@ -26,8 +27,10 @@ export default class SubscribeNews extends React.Component {
           <div className="subscribeNews__close-wrap">
             <a onClick={this.switchmenu} className="subscribeNews__close">X</a>
           </div>
-          <h1 className="subscribeNews__title">
-            Subscríbete a nuestras noticias</h1>
+          <div className="subscribeNews__title-wrap">
+            <h1 className="subscribeNews__title">
+              Subscríbete a nuestras noticias</h1>
+          </div>
           <form className="subscribeNews__form">
             <div className="subscribeNews__input-wrap">
               <label className="subscribeNews__label">Correo</label>

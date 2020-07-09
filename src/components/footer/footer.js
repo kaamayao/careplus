@@ -26,12 +26,13 @@ export default class Footer extends React.Component {
           </div>
           <div className='footer__maininfo'>
             <p className='footer__maininfo-title'>CAREPLUS</p>
-            <p className='footer__maininfo-description'>Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua.</p>
+            <p className='footer__maininfo-description'>
+              Estamos comprometidos con la satisfacción permanente de las
+              necesidades y expectativas de las partes interesadas cumpliendo
+              con calidad, puntualidad y oportunidad a las necesidades de
+              nuestros pacientes y clientes en el marco de los
+              requisitos legales aplicables
+            </p>
           </div>
         </div>
       </div>
