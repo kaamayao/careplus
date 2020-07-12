@@ -1,6 +1,7 @@
 import React from 'react';
 import './contactus.scss';
-import axios from 'axios';
+import Loading from '../../images/contactUs/loading.gif';
+import MailService from '../mailService.js';
 
 export default class ContactUs extends React.Component {
   state = {
@@ -11,63 +12,99 @@ export default class ContactUs extends React.Component {
       phone: 'Deja este espacio en blanco',
       address: 'Deja este espacio en blanco',
     },
+    errors: {
+      name: '',
+      email: '',
+    },
     display: false,
+    formStatus: 'input',
   }
+
   constructor(props) {
     super(props);
     this.handleFormChange = this.handleFormChange.bind(this);
     this.sendForm = this.sendForm.bind(this);
+    this.mailService = new MailService();
   }
+
   handleFormChange() {
     const form = this.state.form;
     form[event.target.name] = event.target.value;
+    form.errors = this.mailService.checkErrors(event.target, this.state);
     this.setState(
         {form: form},
     );
-    console.log(this.state.form);
   }
-  sendForm() {
-    axios.post(
-        'https://0gza7dizjd.execute-api.us-west-2.amazonaws.com/PROD/SendEmail'+
-      '?name='+this.state.form.name+
-      '&message='+this.state.form.message+
-      '&targetAddress=kevinamaya04@gmail.com'+
-      '&email='+this.state.form.email,
-        {
-          'name': this.state.form.name,
-          'message': this.state.form.message,
-          'targetAddress': 'kevinamaya04@gmail.com',
-          'email': this.state.form.email,
-        }
-        ,
-        {headers: {'Content-Type': 'application/json'}},
-    ).then((response) =>{
-      console.log(response);
-    });
+
+  changeStatus(status) {
+    this.setState(
+        {formStatus: status},
+    );
   }
+
+  async sendForm() {
+    this.changeStatus('loading');
+    await this.mailService.sendForm('Desde el formulario de contacto',
+        this.state.form);
+    this.changeStatus('sent');
+  }
+
   render() {
     return (
       <div className="contactus">
-        <div className="contactus__wrap">
+        <div className={
+          this.state.formStatus=='sent'?'contactus__sucess':'hide'}>
+          <div className="contactus__sucess-wrap">
+            <div className="contactus__sucess-content">
+              <h1 className="contactus__sucess-title">
+                ¡Gracias por contactarnos!
+              </h1>
+              <p className="contactus__sucess-description">
+                Nos comunicaremos lo más pronto posible con usted.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={
+          this.state.formStatus=='loading'?'contactus__loading':'hide'}>
+          <div className="contactus__loading-wrap">
+            <img className="contactus__loading-img" src={Loading} alt="" />
+          </div>
+        </div>
+
+        <div className={
+          this.state.formStatus=='input'?'contactus__wrap':'hide'}>
           <h3 className="contactus__title">CONTÁCTANOS</h3>
           <form className="contactus__form">
+
             <label className="contactus__label">Nombre</label>
             <input className="contactus__input" type="text" name="name"
               value={this.state.form.name}
               onChange={this.handleFormChange}
               required
             />
+            <p className={this.state.errors.name!=''?
+              'contactus__error-msg':'hide'}>
+              {this.state.errors.name}</p>
+
             <label className="contactus__label">Email</label>
             <input className="contactus__input" type="email" name="email"
               value={this.state.form.email}
               onChange={this.handleFormChange}
               required
             />
+
+            <p className={this.state.errors.email!=''?
+              'contactus__error-msg':'hide'}>
+              {this.state.errors.email}</p>
+
             <label className="contactus__label">Mensaje</label>
             <textarea className="contactus__textarea" name="message"
               value={this.state.form.message.value}
               onChange={this.handleFormChange}
             />
+
             <input className="contactus__phone"
               value={this.state.form.address}
               onChange={this.handleFormChange}
@@ -77,7 +114,7 @@ export default class ContactUs extends React.Component {
               value={this.state.form.phone}
               style={this.state.display?{}:{display: 'none'}}
             />
-            <button className="contactus__btn"
+            <button type="button" className="contactus__btn"
               onClick={this.sendForm}>
               Enviar
             </button>

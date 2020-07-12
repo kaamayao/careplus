@@ -14,15 +14,40 @@ $secondaryGray: #5A5A5A;
     margin-top:60px;
   }
 }
+
+@keyframes fade {
+  0% {
+    opacity: 100;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.fadeIn {
+  animation: fade 0.25s forwards;
+} 
+
+.fadeOut {
+  animation: fade 0.25s forwards;
+  animation-direction: reverse;
+}
+
 .none{
   display: none;
 }
+
 .green{
   color: $mainGreen;
 }
+
 .blue{
   color: $mainBlue;
 }
+
 .hide{
   display: none;
 }

@@ -2,40 +2,40 @@
 
 @media (min-width: 700px){
   .IndexServices{
-    
- &__service-wrap{
+
+    &__service-wrap{
       padding-top: 80px;
       padding-bottom:80px;
     }
-    
- &__service-wrap-regular{
+
+    &__service-wrap-regular{
       flex-direction: row;
     }
-    
- &__service-wrap-reverse{
+
+    &__service-wrap-reverse{
       flex-direction: row-reverse;
     }
-    
- &__service-border-blue{
+
+    &__service-border-blue{
       border-left: 4px solid $mainBlue;
       margin-left: 10px;
     }
-    
- &__service-border-green{
+
+    &__service-border-green{
       border-right: 4px solid $mainGreen;
       margin-right: 10px;
     }
-    
- &__service-img{
+
+    &__service-img{
       width:100%;
       max-width: 550px;
     }
-    
- &__service-content{
+
+    &__service-content{
       justify-content: center;
     }
-    
- &__service-description{
+
+    &__service-description{
       margin-bottom: 20px;
     }
   }
@@ -43,24 +43,23 @@
 
 @media (max-width: 699px){
   .IndexServices{
-    
- &__service-wrap{
+
+    &__service-wrap{
       display: flex;
       flex-direction: column;
-      padding-top: 40px;
-      padding-bottom:80px;
+      height: 580px;
     }
-    
- &__service-img{
+
+    &__service-img{
       width:100%;
       margin-bottom: 20px;
     }
-    
- &__service-content{
+
+    &__service-content{
       align-items: center;
     }
-    
- &__service-description{
+
+    &__service-description{
       margin-bottom: 50px;
     }
   }
@@ -70,82 +69,84 @@
   background-color: $mainGray;
   padding-bottom: 50px;
   padding-top: 50px;
-  
- &__service-wrap{
+
+  &__service-wrap{
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: center;
   }
-  
- &__service-title{
+
+  &__service-title{
     font-family: "BelongSans";
     color: $mainBlue; 
     padding-left:15px;
     padding-right:15px;
   }
-  
- &__service-title-green{
+
+  &__service-title-green{
     font-family: "BelongSans";
     color: $mainGreen; 
     padding-left:15px;
     padding-right:15px;
   }
-  
- &__service-content{
+
+  &__service-content{
     display: flex;
     flex-direction: column; 
     color: $secondaryGray;
     height: 200px;
     width: 400px;
   }
-  
- &__service-description{
+
+  &__service-description{
     font-family: "Comfortaa";
     font-size: 13px;
     padding-right:15px;
     padding-left:15px;
     text-align: justify;
   }
-  
- &__btn{
+
+  &__btn{
     color: white;
     text-decoration: none;
     border-radius: 10px;
     text-align: center;
     padding:10px;
-    padding-left:0px;
-    padding-right:0px;
     font-family: "Comfortaa";
     font-size: 13px;
     margin-left: 15px;
+    @media (max-width:799px){
+      padding-left:30px;
+      padding-right:30px;
+    } 
   }
-  
- &__btn-blue{
+
+  &__btn-blue{
     background-color: $mainBlue;
     max-width: 250px;
-    
- &:hover{
+
+    &:hover{
       background-color: $mainGreen;
       cursor: pointer;
     }
   }
-  
- &__btn-blue-sm{
+
+  &__btn-blue-sm{
     background-color: $mainBlue;
     max-width: 100px;
-    
- &:hover{
+
+    &:hover{
       background-color: $mainGreen;
       cursor: pointer;
     }
   }
-  
- &__btn-green{
+
+  &__btn-green{
     background-color: $mainGreen;
     max-width: 150px;
-    
- &:hover{
+
+    &:hover{
       background-color: $mainBlue;
       cursor: pointer;
     }

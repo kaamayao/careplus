@@ -6,7 +6,7 @@ import ContactUs from '../components/contactus/contactus.js';
 
 const Contactanos = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Contáctanos" />
     <ContactUs></ContactUs>
   </Layout>
 );

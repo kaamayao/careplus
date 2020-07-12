@@ -1,7 +1,7 @@
 import React from 'react';
 import './postList.scss';
 import Insta from '../../images/blog/insta.png';
-import Twitter from '../../images/blog/twitter.png';
+import Youtube from '../../images/blog/youtube.png';
 import Facebook from '../../images/blog/facebook.png';
 import BlogPost1 from '../../images/blog/posts/Post1.jpg';
 import BlogPost2 from '../../images/blog/posts/Post2.jpg';
@@ -169,20 +169,21 @@ export default class PostList extends React.Component {
           </p>
           <div className="post__follow-us-social">
             <div className="post__follow-us-social-item">
-              <a className="post__follow-us-social-link">
+              <a href="https://www.instagram.com/careplus_col/" className="post__follow-us-social-link">
                 <img className="post__follow-us-social-img" src={Insta}/>
                 <span className="post__follow-us-social-description">
                   @careplus</span>
               </a>
-              <a className="post__follow-us-social-link">
-                <img className="post__follow-us-social-img" src={Twitter}/>
+              <a href=""className="post__follow-us-social-link">
+                <img className="post__follow-us-social-img" src={Youtube}/>
                 <span className="post__follow-us-social-description">
-                  @careplus</span>
+                  CarePlus Colombia</span>
               </a>
-              <a className="post__follow-us-social-link">
+              <a href="https://www.facebook.com/CarePlus-Colombia-108909850808316/?ref=page_internal&path=%2FCarePlus-Colombia-108909850808316%2F"
+                className="post__follow-us-social-link">
                 <img className="post__follow-us-social-img" src={Facebook}/>
                 <span className="post__follow-us-social-description">
-                  careplus
+                  CarePlus Colombia
                 </span>
               </a>
             </div>

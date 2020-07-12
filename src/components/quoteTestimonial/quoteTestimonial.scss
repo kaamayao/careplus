@@ -13,17 +13,21 @@
   @media (max-width:799px){
   padding-top:30px;
   } 
+
+
   &__content{
     display: flex;
     flex-direction: column;
     max-width: 600px;
   }
+
   &__title{
     font-family: 'BelongSans';
     color: $mainBlue;
     margin-bottom:40px;
     text-align:center;
   }
+
   &__btn-wrap{
     display:flex;
     justify-content: center;
@@ -31,10 +35,12 @@
     max-width:600px;
     width:100%;
   }
+
   &__quote{
     font-size:70px;
     font-family: 'BelongSans';
   }
+
   &__rquote{ 
     margin:-10px;
     display: flex;
@@ -43,16 +49,25 @@
     align-items: flex-end;
     justify-content: flex-end;
   }
+
   &__description{
     margin:0;
     font-family: 'Comfortaa';
     text-align:center;
+    @media (min-width:800px){
+      height:70px;
+    }
+    @media (max-width:799px){
+      height:150px;
+    } 
   }
+
   &__lquote{
     color: $mainGreen;
     margin-bottom:-30px;
     margin-top:0px;
   }
+
   &__btn{
     display: flex;
     justify-content: center;
@@ -62,22 +77,26 @@
     color:white;
     border-radius: 50%;
     font-family: 'Comfortaa';
+    border: 0px;
     &:hover{
       cursor:pointer;
     }
   }
+
   &__lbtn{
     background-color: $mainBlue;
     &:hover{
       background-color: $mainGreen;
     }
   }
+
   &__rbtn{
     background-color: $mainGreen;
     &:hover{
       background-color: $mainBlue;
     }
   }
+
   &__user{
     max-width: 560px;
     width:100%;
@@ -86,6 +105,7 @@
     font-family: 'Coomforta';
     color: $secondaryGray;
   }
+
   &__bottom-img{
     margin-top: 100px;
     width: 100vw;

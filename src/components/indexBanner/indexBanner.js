@@ -2,6 +2,7 @@ import React from 'react';
 import './indexBanner.scss';
 import '../../fonts/fonts.css';
 import Banner from '../../images/indexbanner/banner.png';
+import {Link} from 'gatsby';
 
 export default class indexBanner extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ export default class indexBanner extends React.Component {
             nuestros clientes en medio de una relación responsable, de
             empatía y de confianza.
           </p>
-          <a className='indexBanner__learn-more-btn'>Aprender más</a>
+          <Link className="indexBanner__learn-more-btn" to="/sobre-nosotros/"
+            activeClassName="green" >
+              Contáctanos</Link>
         </div>
         <img src={Banner} className="indexBanner__img"/>
         <div className="indexBanner__banner-img-wrap">

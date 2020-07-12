@@ -1,5 +1,4 @@
-import React from 'react';
-import Menu from '../../images/menu.svg';
+import React from 'react'; import Menu from '../../images/menu.svg';
 import Close from '../../images/close.svg';
 import Logo from '../../images/Logo-sm.png';
 import './navigation.scss';
@@ -66,25 +65,24 @@ class Navigation extends React.Component {
           </div>
           <div className="navigation__links">
             <Link className="navigation__link" activeClassName="green"
-              to="/" onlyActiveOnIndex>
+              to="/" >
               Inicio</Link>
             <Link className="navigation__link" to="/sobre-nosotros/"
-              activeClassName="green" onlyActiveOnIndex>
+              activeClassName="green" >
               Sobre Nosotros</Link>
             <Link className="navigation__link" activeClassName="green"
-              to="/servicios/" onlyActiveOnIndex>
+              to="/servicios/" >
               Servicios</Link>
             <Link className="navigation__link" to="/blog/"
-              activeClassName="green" onlyActiveOnIndex>
+              activeClassName="green" >
               Blog</Link>
             <Link className="navigation__link" to="/testimonios/"
-              activeClassName="green" onlyActiveOnIndex>
+              activeClassName="green" >
               Testimonios</Link>
-            <Link className="navigation__link" to="/page-2/"
-              activeClassName="green" onlyActiveOnIndex>
-              Cursos</Link>
+            <a className="navigation__link-disabled">
+              Cursos</a>
             <Link className="navigation__link" to="/contactanos/"
-              activeClassName="green" onlyActiveOnIndex>
+              activeClassName="green" >
               Contáctanos</Link>
           </div>
         </div>

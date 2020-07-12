@@ -12,16 +12,16 @@ export default class Footer extends React.Component {
         <div className='footer__wrap'>
           <div className='footer__sideinfo'>
             <div className='footer__info'>
-              <p className='footer__info-title'>Cra 63A #10-12</p>
-              <p className='footer__info-subtitle'>Edificio Aleatorio</p>
+              <p className='footer__info-title'>Cra 23 #124-87</p>
+              <p className='footer__info-subtitle'>Torre 1.Consultorio 701-1.
+                Torre Zentai</p>
             </div>
             <div className='footer__info'>
-              <p className='footer__info-title'>Example email</p>
+              <p className='footer__info-title'>carepluscolombia<br></br>@outlook.com</p>
             </div>
             <div className='footer__info'>
               <p className='footer__info-title'>Teléfonos</p>
-              <p className='footer__info-subtitle'>Teléfonos</p>
-              <p className='footer__info-subtitle'>Teléfonos</p>
+              <p className='footer__info-subtitle'>3204020942</p>
             </div>
           </div>
           <div className='footer__maininfo'>

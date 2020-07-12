@@ -18,6 +18,14 @@
       flex-direction: center;
       align-items: center;
     }
+    &__link-disabled{
+      height: 55px;
+      display: flex;
+      width: 100%;
+      padding-left:40px;
+      flex-direction: center;
+      align-items: center;
+    }
     &__mobile{
       display: flex;
       align-items: center;
@@ -113,6 +121,10 @@
       padding-right: 10px; 
       padding-left: 10px; 
     }
+    &__link-disabled{
+      padding-right: 10px; 
+      padding-left: 10px; 
+    }
     &__subscribe{
       position: absolute;
       top: 0px;
@@ -159,6 +171,15 @@
     font-family: 'BelongSans';
     &:hover{
       color: $mainGreen;
+    }
+  }
+  &__link-disabled{
+    font-size: 13px;
+    text-decoration: none;
+    color: #d2d2d2;
+    font-family: 'BelongSans';
+    &:hover{
+      cursor: not-allowed;
     }
   }
   &__subscribe{

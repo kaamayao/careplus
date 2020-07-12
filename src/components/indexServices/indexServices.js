@@ -27,7 +27,7 @@ export default class indexServices extends React.Component {
               gran variedad de servicios diseñados a tu medida, dirigidos a
               toda tu familia.</p>
             <Link className="IndexServices__btn IndexServices__btn-blue"
-              to="/servicios/" onlyActiveOnIndex>Conóce nuestros servicios
+              to="/servicios/">Conóce nuestros servicios
             </Link>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default class indexServices extends React.Component {
               nuestra tienda virtual y elige el producto que más se adapte a
               tus necesidades.</p>
             <Link className="IndexServices__btn IndexServices__btn-blue-sm"
-              to="/contactanos/" onlyActiveOnIndex> compra</Link>
+              to="/contactanos/"> compra</Link>
           </div>
         </div>
       </div>);
