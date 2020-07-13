@@ -8,7 +8,7 @@ import History from '../components/history/history.js';
 
 const AboutUs = () => (
   <Layout>
-    <SEO title="about us" />
+    <SEO title="Sobre Nosotros" />
     <QuoteBanner></QuoteBanner>
     <MissionVision></MissionVision>
     <History></History>

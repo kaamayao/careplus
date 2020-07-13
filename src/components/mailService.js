@@ -7,15 +7,16 @@ export default class MailService extends React.Component {
 
   formIsValid(state) {
     let isValid = true;
+    let errors;
     for (const field in state.errors) {
       if (state.errors.hasOwnProperty(field)) {
-        this.checkErrors({'name': field, 'value': state.form[field]});
-        if (state.errors[field]!='') {
+        errors = this.checkErrors({name: field, value: state.form[field]}, state);
+        if (errors[field]!='') {
           isValid = false;
         }
       }
     }
-    return isValid;
+    return {isValid: isValid, errors: errors};
   }
 
   validateEmail(email) {
@@ -44,9 +45,11 @@ export default class MailService extends React.Component {
             name: form.name,
             email: form.email,
             phone: form.phone,
+            surname: form.surname,
+            message: form.message,
             address: form.address,
-            title: 'Por subscripción',
-            toAddress: 'kevinamaya04@gmail.com',
+            title: title,
+            toAddress: 'carepluscolombia@outlook.com',
           }),
         });
     return true;

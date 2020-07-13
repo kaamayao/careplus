@@ -5,6 +5,7 @@ import Header from './header';
 import './layout.scss';
 import Navigation from './navigation/navigation.js';
 import Footer from '../components/footer/footer.js';
+import Helmet from 'react-helmet';
 
 const Layout = ({children}) => {
   const data = useStaticQuery(graphql`

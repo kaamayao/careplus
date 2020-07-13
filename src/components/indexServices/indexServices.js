@@ -1,6 +1,7 @@
 import React from 'react';
 import './indexServices.scss';
-import FirstBanner from '../../images/indexServices/firstBanner.png';
+
+import First from '../../images/indexServices/First.png';
 import SecondBanner from '../../images/indexServices/secondBanner.png';
 import ThirdBanner from '../../images/indexServices/thirdBanner.png';
 import {Link} from 'gatsby';
@@ -16,7 +17,7 @@ export default class indexServices extends React.Component {
         <div className='IndexServices__service-wrap
                         IndexServices__service-wrap-regular'>
           <div className='IndexServices__service-wrap-img'>
-            <img src={FirstBanner} className="IndexServices__service-img"/>
+            <img src={First} className="IndexServices__service-img"/>
           </div>
           <div className='IndexServices__service-content
                           IndexServices__service-border-blue'>
@@ -48,8 +49,6 @@ export default class indexServices extends React.Component {
               higiene de sueño en niños, alimentación durante el embarazo y la
               lactancia, alimentación en la vejez, anestesia regional guiada por
               ecografía, entre otros.</p>
-            <Link className="IndexServices__btn IndexServices__btn-green"
-              to='page-2'>Únete al curso</Link>
           </div>
         </div>
         <div className='IndexServices__service-wrap'>

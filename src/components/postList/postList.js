@@ -172,7 +172,7 @@ export default class PostList extends React.Component {
               <a href="https://www.instagram.com/careplus_col/" className="post__follow-us-social-link">
                 <img className="post__follow-us-social-img" src={Insta}/>
                 <span className="post__follow-us-social-description">
-                  @careplus</span>
+                  @careplus_col</span>
               </a>
               <a href=""className="post__follow-us-social-link">
                 <img className="post__follow-us-social-img" src={Youtube}/>

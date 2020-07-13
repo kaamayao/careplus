@@ -8,15 +8,18 @@ export default class shareExperience extends React.Component {
     form: {
       name: '',
       message: '',
-      phone: 'Deja este espacio en blanco',
+      surname: 'Deja este espacio en blanco',
       address: 'Deja este espacio en blanco',
     },
     errors: {
       name: '',
+      message: '',
     },
     display: false,
     formStatus: 'input',
   }
+
+  surname = true
 
   constructor(props) {
     super(props);
@@ -41,10 +44,16 @@ export default class shareExperience extends React.Component {
   }
 
   async sendForm() {
-    this.changeStatus('loading');
-    await this.mailService.sendForm('Desde el formulario de testimonio',
-        this.state.form);
-    this.changeStatus('sent');
+    const {isValid, errors} = this.mailService.formIsValid(this.state);
+    this.setState({
+      errors: errors,
+    });
+    if (isValid) {
+      this.changeStatus('loading');
+      await this.mailService.sendForm('Alguien compartió su experiencia.',
+          this.state.form);
+      this.changeStatus('sent');
+    }
   }
 
   render() {
@@ -79,9 +88,12 @@ export default class shareExperience extends React.Component {
           'hide'}>
 
           <label className="share-experience__text">Nombre</label>
-          <input type="text" name="name" value={this.state.form.email}
+          <input type="text" name="name" value={this.state.form.name}
             onChange={this.handleFormChange}
             className="share-experience__input"/>
+          <p className={this.state.errors.name!=''?
+              'share-experience__error-msg':'hide'}>
+            {this.state.errors.name}</p>
 
           <label className="share-experience__address">Dirección</label>
           <input type="text" name="address" value={this.state.form.address}
@@ -89,14 +101,17 @@ export default class shareExperience extends React.Component {
             className="share-experience__input share-experience__address"/>
 
           <label className="share-experience__phone"> Teléfono</label>
-          <input type="text" name="phone" value={this.state.form.phone}
+          <input type="text" name="phone" value={this.state.form.surname}
             onChange={this.handleFormChange}
-            className="share-experience__input share-experience__phone"/>
+            className={this.surname?'hide':'share-experience-input'}/>
 
           <label className="share-experience__text">Comentario</label>
           <textarea type="text" name="message" value={this.state.form.message}
             onChange={this.handleFormChange}
             className="share-experience__comment"></textarea>
+          <p className={this.state.errors.message!=''?
+              'share-experience__error-msg':'hide'}>
+            {this.state.errors.message}</p>
 
           <button type="button" className="share-experience__btn"
             onClick={this.sendForm}>

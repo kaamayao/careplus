@@ -49,8 +49,7 @@ class Navigation extends React.Component {
             <img src={Menu} className="navigation__menu"/>
           </a>
           <div className="navigation__mobile-logo-wrap">
-            <img src={Logo} className="navigation__logo"/>
-          </div>
+            <img src={Logo} className="navigation__logo"/> </div>
         </div>
         <div className={this.state.isMenuOpen|this.state.isDesktop?
           'navigation__wrap':'none'}>
@@ -88,7 +87,7 @@ class Navigation extends React.Component {
         </div>
         <a className="navigation__subscribe"
           onClick={this.switchSubscribeMenu}>
-            Subscribéte
+            Suscríbete
         </a>
       </nav>
     );

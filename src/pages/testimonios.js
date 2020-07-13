@@ -8,7 +8,7 @@ import ShareExperience from '../components/shareExperience/shareExperience.js';
 
 const Testimonios = () => (
   <Layout>
-    <SEO title="testimonios" />
+    <SEO title="Testimonios" />
     <QuoteTestimonial></QuoteTestimonial>
     <ShareExperience></ShareExperience>
   </Layout>

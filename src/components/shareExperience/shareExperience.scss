@@ -42,6 +42,11 @@
     padding:10px;
     border-radius: 25px;
     background-color: $mainGreen;
+    &:hover{
+      cursor: pointer;
+      background-color: white;
+      color: $mainGreen;
+    }
   }
 
   &__input{
@@ -104,5 +109,12 @@
     margin: 0;
     margin-top: 8px;
     font-family:'Comfortaa';
+  }
+
+  &__error-msg {
+    color: #ffe86c;
+    margin-top: -17px;
+    margin-bottom: 28px;
+    font-family:'BelongSans';
   }
 }

@@ -7,7 +7,7 @@ export default class SubscribeNews extends React.Component {
   state = {
     form: {
       email: '',
-      phone: 'Deja este espacio en blanco',
+      surname: 'Deja este espacio en blanco',
       address: 'Deja este espacio en blanco',
     },
     errors: {
@@ -49,9 +49,15 @@ export default class SubscribeNews extends React.Component {
   }
 
   async sendForm() {
-    this.changeStatus('loading');
-    await this.mailService.sendForm('Alguién se subscribió', this.state.form);
-    this.changeStatus('sent');
+    const {isValid, errors} = this.mailService.formIsValid(this.state);
+    this.setState({
+      errors: errors,
+    });
+    if (isValid) {
+      this.changeStatus('loading');
+      await this.mailService.sendForm('Alguién se suscribió.', this.state.form);
+      this.changeStatus('sent');
+    }
   }
 
   render() {
@@ -66,7 +72,7 @@ export default class SubscribeNews extends React.Component {
           </div>
           <div className="subscribeNews__title-wrap">
             <h1 className="subscribeNews__title">
-              Subscríbete a nuestras noticias</h1>
+              Suscríbete a nuestras noticias</h1>
           </div>
 
           <div className={

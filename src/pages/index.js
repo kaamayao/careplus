@@ -8,7 +8,7 @@ import ContactUs from '../components/contactus/contactus.js';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Inicio" />
     <IndexBanner></IndexBanner>
     <IndexServices></IndexServices>
     <ContactUs></ContactUs>

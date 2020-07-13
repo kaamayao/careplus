@@ -1,9 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Sitio web de stuff`,
-    author: `@gatsbyjs`,
+    title: `Careplus`,
+    description: `Profesionales en Pediatría,
+                  ofrecemos perforación de orejas para bebes,
+                  consulta domiciliaria,cursos online y venta de productos para
+                  la salud.`,
+    author: `Kevin Amaya Osorio`,
   },
+  pathPrefix: '/',
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

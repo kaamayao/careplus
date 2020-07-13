@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'BelongSans';
-    src: url('belongsans-webfont.woff2') format('woff2'),
-         url('belongsans-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BelongSans';
+  src: url('belongsans-webfont.woff2') format('woff2'),
+       url('belongsans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -12,3 +12,4 @@
   font-weight: normal;
   font-style: normal;
 }
+

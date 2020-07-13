@@ -6,7 +6,7 @@ import Services from '../components/services/services.js';
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Services" />
+    <SEO title="Servicios" />
     <Services></Services>
   </Layout>
 );

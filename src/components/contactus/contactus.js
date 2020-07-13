@@ -9,12 +9,14 @@ export default class ContactUs extends React.Component {
       name: '',
       email: '',
       message: '',
-      phone: 'Deja este espacio en blanco',
+      phone: '',
+      surname: 'Deja este espacio en blanco',
       address: 'Deja este espacio en blanco',
     },
     errors: {
       name: '',
       email: '',
+      phone: '',
     },
     display: false,
     formStatus: 'input',
@@ -43,10 +45,16 @@ export default class ContactUs extends React.Component {
   }
 
   async sendForm() {
-    this.changeStatus('loading');
-    await this.mailService.sendForm('Desde el formulario de contacto',
-        this.state.form);
-    this.changeStatus('sent');
+    const {isValid, errors} = this.mailService.formIsValid(this.state);
+    this.setState({
+      errors: errors,
+    });
+    if (isValid) {
+      this.changeStatus('loading');
+      await this.mailService.sendForm('Desde el formulario de contacto.',
+          this.state.form);
+      this.changeStatus('sent');
+    }
   }
 
   render() {
@@ -94,14 +102,23 @@ export default class ContactUs extends React.Component {
               onChange={this.handleFormChange}
               required
             />
-
             <p className={this.state.errors.email!=''?
               'contactus__error-msg':'hide'}>
               {this.state.errors.email}</p>
 
+            <label className="contactus__label">Teléfono</label>
+            <input className="contactus__input" type="text" name="phone"
+              value={this.state.form.phone}
+              onChange={this.handleFormChange}
+              required
+            />
+            <p className={this.state.errors.phone!=''?
+              'contactus__error-msg':'hide'}>
+              {this.state.errors.phone}</p>
+
             <label className="contactus__label">Mensaje</label>
             <textarea className="contactus__textarea" name="message"
-              value={this.state.form.message.value}
+              value={this.state.form.message}
               onChange={this.handleFormChange}
             />
 
@@ -111,7 +128,7 @@ export default class ContactUs extends React.Component {
             />
             <input
               onChange={this.handleFormChange}
-              value={this.state.form.phone}
+              value={this.state.form.surname}
               style={this.state.display?{}:{display: 'none'}}
             />
             <button type="button" className="contactus__btn"
