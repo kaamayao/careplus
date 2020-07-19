@@ -29,7 +29,7 @@ export default class Services extends React.Component {
             </div>
             <div className="services__item-content-wrap">
               <h2 className="services__item-title blue">
-                Nutrilogía Nutrición</h2>
+                Nutriología Nutrición</h2>
               <p className="services__item-description">
                 La nutriología es la especialidad médica que estudia la
                 alimentación humana y su relación con los procesos químicos,

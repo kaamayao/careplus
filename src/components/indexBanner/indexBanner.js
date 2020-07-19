@@ -14,8 +14,8 @@ export default class indexBanner extends React.Component {
       <div className='indexBanner'>
         <div className='indexBanner__content-wrap'>
           <h1 className='indexBanner__title'>
-            Ofrecemos a la comunidad colombiana productos relacionados con
-            la salud, el cuidado y el bienestar
+            Ofrecemos a la comunidad colombiana servicios y productos
+            relacionados con la salud, el cuidado y el bienestar
           </h1>
           <div className="indexBanner__info-wrap">
             <p className='indexBanner__content'>

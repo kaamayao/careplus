@@ -3,6 +3,12 @@ import './shareExperience.scss';
 import MailService from '../mailService.js';
 import Loading from '../../images/Testimonials/loading-blue.gif';
 
+!function($_x, _s, id) {
+  let js; const fjs=$_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) {
+    js = $_x.createElement(_s); js.id = id; js.src = '//platform.docplanner.com/js/widget.js'; fjs.parentNode.insertBefore(js, fjs);
+  }
+}(document, 'script', 'zl-widget-s');
+
 export default class shareExperience extends React.Component {
   state = {
     form: {
@@ -82,7 +88,7 @@ export default class shareExperience extends React.Component {
             <img className="share-experience__loading-img" src={Loading} alt="" />
           </div>
         </div>
-
+        <a id="zl-url" className="zl-url" href="https://www.doctoralia.co/emely-licet-morales-rua/pediatra-nutriologo/bogota" rel="nofollow" data-zlw-doctor="emely-licet-morales-rua" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true">Emely Licet Morales Rúa - Doctoralia.co</a>
         <form
           className={this.state.formStatus=='input'?'share-experience__form':
           'hide'}>

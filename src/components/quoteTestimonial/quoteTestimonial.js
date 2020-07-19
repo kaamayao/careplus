@@ -79,7 +79,6 @@ export default class QuoteTestimonial extends React.Component {
   changeSlide(mov) {
     const slideIndex = this.mod(this.state.slideIndex +
       mov, this.slides.length);
-    console.log(slideIndex);
     this.setState(
         {
           slide: this.slides[slideIndex],

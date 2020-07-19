@@ -80,9 +80,6 @@
   &__item-description{
     font-family: "Comfortaa";
     text-align: justify;
-    @media (max-width:799px){
-      text-align:left;
-    } 
   }
 
   &__item-green{
