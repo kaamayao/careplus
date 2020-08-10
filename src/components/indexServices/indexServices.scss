@@ -2,7 +2,7 @@
 
 @media (min-width: 700px){
   .IndexServices{
-
+    padding-top: 50px;
     &__service-wrap{
       padding-top: 80px;
       padding-bottom:80px;
@@ -28,11 +28,7 @@
 
     &__service-img{
       width:100%;
-      max-width: 550px;
-    }
-
-    &__service-content{
-      justify-content: center;
+      max-width: 480px;
     }
 
     &__service-description{
@@ -47,12 +43,13 @@
     &__service-wrap{
       display: flex;
       flex-direction: column;
-      height: 580px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      //height: 580px;
     }
 
     &__service-img{
       width:100%;
-      margin-bottom: 20px;
     }
 
     &__service-content{
@@ -68,7 +65,6 @@
 .IndexServices{
   background-color: $mainGray;
   padding-bottom: 50px;
-  padding-top: 50px;
 
   &__service-wrap{
     display: flex;

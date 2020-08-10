@@ -1,7 +1,7 @@
 import React from 'react';
 import './indexServices.scss';
 
-import First from '../../images/indexServices/First.png';
+import First from '../../images/indexServices/firstBanner.jpg';
 import SecondBanner from '../../images/indexServices/secondBanner.png';
 import ThirdBanner from '../../images/indexServices/thirdBanner.png';
 import {Link} from 'gatsby';
@@ -32,6 +32,7 @@ export default class indexServices extends React.Component {
             </Link>
           </div>
         </div>
+
         <div className='IndexServices__service-wrap
                         IndexServices__service-wrap-reverse'>
           <div className='IndexServices__service-wrap-img'>
@@ -51,6 +52,7 @@ export default class indexServices extends React.Component {
               ecografía, entre otros.</p>
           </div>
         </div>
+
         <div className='IndexServices__service-wrap'>
           <div className='IndexServices__service-wrap-img'>
             <img src={ThirdBanner} className="IndexServices__service-img"/>
